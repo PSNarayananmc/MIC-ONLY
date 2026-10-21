@@ -1,0 +1,19 @@
+Test project /home/z/my-project/voicecraft-studio/build
+    Start 1: ringbuffer
+1/7 Test #1: ringbuffer .......................   Passed    0.02 sec
+    Start 2: dsp_chain
+2/7 Test #2: dsp_chain ........................   Passed    0.76 sec
+    Start 3: loudness
+3/7 Test #3: loudness .........................   Passed    0.14 sec
+    Start 4: presets
+4/7 Test #4: presets ..........................   Passed    0.01 sec
+    Start 5: recorder
+5/7 Test #5: recorder .........................   Passed    0.06 sec
+    Start 6: pulse_e2e
+6/7 Test #6: pulse_e2e ........................   Passed    7.00 sec
+    Start 7: dsp_bench
+7/7 Test #7: dsp_bench ........................   Passed    4.62 sec
+
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =  12.61 sec

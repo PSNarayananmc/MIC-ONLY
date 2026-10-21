@@ -1,0 +1,399 @@
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for module 'libpulse'
+--   Found libpulse, version 17.0
+-- Checking for module 'libpulse-simple'
+--   Found libpulse-simple, version 17.0
+-- Checking for module 'samplerate'
+--   Found samplerate, version 0.2.2
+-- Checking for module 'sndfile'
+--   Found sndfile, version 1.2.2
+-- Checking for module 'rnnoise'
+--   Found rnnoise, version 0.2
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/z/my-project/voicecraft-studio/build
+[  0%] Built target voicecraft_core_autogen_timestamp_deps
+[  1%] Automatic MOC and UIC for target voicecraft_core
+[  1%] Built target voicecraft_core_autogen
+[  2%] Building CXX object CMakeFiles/voicecraft_core.dir/voicecraft_core_autogen/mocs_compilation.cpp.o
+[  3%] Building CXX object CMakeFiles/voicecraft_core.dir/src/core/Log.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/moc_AudioPipeline.cpp:10,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/mocs_compilation.cpp:2:
+/home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/build/voicecraft_core_autogen/MYYQ2Y7GGF/../../../src/audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[  5%] Building CXX object CMakeFiles/voicecraft_core.dir/src/core/Settings.cpp.o
+[  6%] Building CXX object CMakeFiles/voicecraft_core.dir/src/core/Diagnostics.cpp.o
+[  7%] Building CXX object CMakeFiles/voicecraft_core.dir/src/core/PresetManager.cpp.o
+[  8%] Building CXX object CMakeFiles/voicecraft_core.dir/src/audio/RingBuffer.cpp.o
+[ 10%] Building CXX object CMakeFiles/voicecraft_core.dir/src/audio/PulseContext.cpp.o
+[ 11%] Building CXX object CMakeFiles/voicecraft_core.dir/src/audio/AudioSource.cpp.o
+[ 12%] Building CXX object CMakeFiles/voicecraft_core.dir/src/audio/VirtualMicrophone.cpp.o
+[ 13%] Building CXX object CMakeFiles/voicecraft_core.dir/src/audio/AudioPipeline.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/audio/AudioPipeline.cpp:1:
+/home/z/my-project/voicecraft-studio/src/audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 15%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/Biquad.cpp.o
+[ 16%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/HighPass.cpp.o
+[ 17%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/NoiseSuppression.cpp.o
+[ 18%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/NoiseGate.cpp.o
+[ 20%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/ParametricEQ.cpp.o
+[ 21%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/DeEsser.cpp.o
+[ 22%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/Compressor.cpp.o
+[ 23%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/Saturation.cpp.o
+[ 25%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/LoudnessMeter.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.cpp:1:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 26%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/LoudnessControl.cpp.o
+[ 27%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/Limiter.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/dsp/LoudnessControl.cpp:1:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 28%] Building CXX object CMakeFiles/voicecraft_core.dir/src/dsp/DSPEngine.cpp.o
+[ 30%] Building CXX object CMakeFiles/voicecraft_core.dir/src/autotune/VoiceAnalyzer.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/dsp/DSPEngine.cpp:1:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/src/autotune/VoiceAnalyzer.cpp:2:
+/home/z/my-project/voicecraft-studio/src/autotune/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/autotune/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/autotune/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/autotune/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/autotune/VoiceAnalyzer.cpp: In member function ‘vc::VoiceAnalysisResult vc::VoiceAnalyzer::analyze(const float*, qint64, int, int)’:
+/home/z/my-project/voicecraft-studio/src/autotune/VoiceAnalyzer.cpp:29:34: warning: narrowing conversion of ‘(std::size_t)frames’ from ‘std::size_t’ {aka ‘long unsigned int’} to ‘float’ [-Wnarrowing]
+   29 |     std::vector<float> mono{std::size_t(frames), 0.0f};
+      |                                  ^~~~~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/autotune/VoiceAnalyzer.cpp:29:34: warning: narrowing conversion of ‘(std::size_t)frames’ from ‘std::size_t’ {aka ‘long unsigned int’} to ‘float’ [-Wnarrowing]
+[ 31%] Building CXX object CMakeFiles/voicecraft_core.dir/src/recorder/Recorder.cpp.o
+[ 32%] Building CXX object CMakeFiles/voicecraft_core.dir/src/recorder/AudioDocument.cpp.o
+[ 33%] Linking CXX static library libvoicecraft_core.a
+[ 35%] Built target voicecraft_core
+[ 35%] Built target voicecraft-studio_autogen_timestamp_deps
+[ 35%] Built target test_ringbuffer_autogen_timestamp_deps
+[ 35%] Built target test_dsp_chain_autogen_timestamp_deps
+[ 35%] Built target test_loudness_autogen_timestamp_deps
+[ 35%] Built target test_presets_autogen_timestamp_deps
+[ 35%] Built target test_recorder_autogen_timestamp_deps
+[ 35%] Built target test_pulse_e2e_autogen_timestamp_deps
+[ 35%] Built target test_dsp_bench_autogen_timestamp_deps
+[ 36%] Automatic MOC and UIC for target voicecraft-studio
+[ 37%] Automatic MOC and UIC for target test_ringbuffer
+[ 37%] Built target test_ringbuffer_autogen
+[ 38%] Automatic MOC and UIC for target test_dsp_chain
+[ 38%] Built target test_dsp_chain_autogen
+[ 40%] Automatic MOC and UIC for target test_loudness
+[ 40%] Built target test_loudness_autogen
+[ 41%] Automatic MOC and UIC for target test_presets
+[ 41%] Built target test_presets_autogen
+[ 42%] Automatic MOC and UIC for target test_recorder
+[ 42%] Built target test_recorder_autogen
+[ 43%] Automatic MOC and UIC for target test_pulse_e2e
+[ 43%] Built target test_pulse_e2e_autogen
+[ 45%] Automatic MOC and UIC for target test_dsp_bench
+[ 45%] Built target voicecraft-studio_autogen
+[ 45%] Built target test_dsp_bench_autogen
+[ 46%] Building CXX object CMakeFiles/test_ringbuffer.dir/test_ringbuffer_autogen/mocs_compilation.cpp.o
+[ 47%] Building CXX object CMakeFiles/test_dsp_chain.dir/test_dsp_chain_autogen/mocs_compilation.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_dsp_chain.dir/tests/test_dsp_chain.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_ringbuffer.dir/tests/test_ringbuffer.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/tests/../src/dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/tests/test_dsp_chain.cpp:14:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 51%] Linking CXX executable test_ringbuffer
+[ 52%] Built target test_ringbuffer
+[ 53%] Building CXX object CMakeFiles/test_loudness.dir/test_loudness_autogen/mocs_compilation.cpp.o
+[ 55%] Building CXX object CMakeFiles/test_loudness.dir/tests/test_loudness.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/tests/test_loudness.cpp:9:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 56%] Linking CXX executable test_dsp_chain
+[ 57%] Built target test_dsp_chain
+[ 58%] Building CXX object CMakeFiles/test_presets.dir/test_presets_autogen/mocs_compilation.cpp.o
+[ 60%] Building CXX object CMakeFiles/test_presets.dir/tests/test_presets.cpp.o
+[ 61%] Linking CXX executable test_loudness
+[ 62%] Built target test_loudness
+[ 63%] Building CXX object CMakeFiles/test_recorder.dir/test_recorder_autogen/mocs_compilation.cpp.o
+[ 65%] Building CXX object CMakeFiles/test_recorder.dir/tests/test_recorder.cpp.o
+[ 66%] Linking CXX executable test_presets
+[ 67%] Built target test_presets
+[ 68%] Building CXX object CMakeFiles/test_pulse_e2e.dir/test_pulse_e2e_autogen/mocs_compilation.cpp.o
+[ 70%] Building CXX object CMakeFiles/test_pulse_e2e.dir/tests/test_pulse_e2e.cpp.o
+[ 71%] Linking CXX executable test_recorder
+[ 72%] Built target test_recorder
+[ 73%] Building CXX object CMakeFiles/test_dsp_bench.dir/test_dsp_bench_autogen/mocs_compilation.cpp.o
+[ 75%] Building CXX object CMakeFiles/test_dsp_bench.dir/tests/test_dsp_bench.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/tests/../src/audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/tests/test_pulse_e2e.cpp:15:
+/home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/tests/../src/dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/tests/test_dsp_bench.cpp:10:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/../src/dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+/home/z/my-project/voicecraft-studio/tests/test_pulse_e2e.cpp: At global scope:
+/home/z/my-project/voicecraft-studio/tests/test_pulse_e2e.cpp:42:27: warning: ‘VIRTUAL_SINK’ defined but not used [-Wunused-variable]
+   42 | static const char*        VIRTUAL_SINK     = "VoiceCraft_Output";
+      |                           ^~~~~~~~~~~~
+[ 76%] Linking CXX executable test_pulse_e2e
+[ 77%] Built target test_pulse_e2e
+[ 78%] Automatic RCC for resources/resources.qrc
+[ 80%] Building CXX object CMakeFiles/voicecraft-studio.dir/voicecraft-studio_autogen/mocs_compilation.cpp.o
+[ 81%] Linking CXX executable test_dsp_bench
+[ 82%] Built target test_dsp_bench
+[ 83%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/main.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/moc_MainWindow.cpp:10,
+                 from /home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/mocs_compilation.cpp:4:
+/home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/build/voicecraft-studio_autogen/YPKJ5OE7LN/../../../src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/main.cpp:1:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 85%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/MainWindow.cpp.o
+[ 86%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/Theme.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.cpp:1:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 87%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/LevelMeter.cpp.o
+[ 88%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/WaveformView.cpp.o
+[ 90%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/StudioTab.cpp.o
+[ 91%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/RecordingTab.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/StudioTab.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/RecordingTab.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 92%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/MixerTab.cpp.o
+[ 93%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/PresetsTab.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MixerTab.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/PresetsTab.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 95%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/SettingsTab.cpp.o
+[ 96%] Building CXX object CMakeFiles/voicecraft-studio.dir/src/ui/AutoVoiceDialog.cpp.o
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/SettingsTab.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+In file included from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessControl.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/DSPEngine.h:10,
+                 from /home/z/my-project/voicecraft-studio/src/ui/../audio/AudioPipeline.h:5,
+                 from /home/z/my-project/voicecraft-studio/src/ui/MainWindow.h:2,
+                 from /home/z/my-project/voicecraft-studio/src/ui/AutoVoiceDialog.cpp:2:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h: In member function ‘void vc::LoudnessMeter::process(const float* const*, int)’:
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:59:30: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   59 |                     (m_count >= m_win400)
+      |                      ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:63:29: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   63 |                 if (m_count >= m_win400)
+      |                     ~~~~~~~~^~~~~~~~~~~
+/home/z/my-project/voicecraft-studio/src/ui/../audio/../dsp/LoudnessMeter.h:69:25: warning: comparison of integer expressions of different signedness: ‘std::size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   69 |             if (m_count < m_win3s) ++m_count;
+      |                 ~~~~~~~~^~~~~~~~~
+[ 97%] Building CXX object CMakeFiles/voicecraft-studio.dir/voicecraft-studio_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+[ 98%] Linking CXX executable voicecraft-studio
+[100%] Built target voicecraft-studio
