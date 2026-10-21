@@ -7,13 +7,20 @@
 # required because the daemon is not installed system-wide and /usr is not
 # writable. On a normal desktop install, plain `pulseaudio --start` works.
 set -e
-source /home/z/my-project/scripts/env.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/env.sh"
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdgrt}
 mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR"
 
 if pactl info >/dev/null 2>&1; then
     echo "PulseAudio already running"
     exit 0
+fi
+
+# Build the LD_PRELOAD path shim if missing (user-space PA has compiled-in
+# absolute paths pointing at /usr; the shim redirects them into ~/opt).
+if [ ! -f "$SCRIPT_DIR/pa_path_shim.so" ]; then
+    gcc -shared -fPIC -o "$SCRIPT_DIR/pa_path_shim.so" "$SCRIPT_DIR/pa_path_shim.c" -ldl
 fi
 
 mkdir -p /home/z/.config/pulse
@@ -25,7 +32,7 @@ load-module module-null-sink sink_name=FakeMicSink sink_properties=device.descri
 EOF
 
 rm -rf "$XDG_RUNTIME_DIR/pulse"
-LD_PRELOAD=/home/z/my-project/scripts/pa_path_shim.so \
+LD_PRELOAD=$SCRIPT_DIR/pa_path_shim.so \
     nohup pulseaudio -n --exit-idle-time=-1 \
     --file=/home/z/.config/pulse/default.pa > /tmp/pa_daemon.log 2>&1 &
 sleep 2

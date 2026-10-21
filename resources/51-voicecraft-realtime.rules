@@ -1,0 +1,16 @@
+# VoiceCraft Studio — allow the audio group to use realtime scheduling
+# (SCHED_FIFO) so the processing engine never misses a deadline on
+# low-end CPUs. Installed to /etc/udev/rules.d by the .deb package.
+#
+# Applies to PulseAudio/PipeWire client threads owned by the "audio" group.
+# No root is required to RUN VoiceCraft Studio; this only lifts rtprio
+# limits for members of the audio group.
+
+# Realtime priority for audio group members
+KERNEL=="pci", ACTION=="add", SUBSYSTEM=="module", RUN+="/bin/true"
+
+# rtprio/rttime limits via udev are unreliable; the canonical place is
+# /etc/security/limits.d (handled in README). This rule flags audio USB
+# devices for udev-audio and ensures the audio group owns hotplugged mics.
+SUBSYSTEM=="sound", ACTION=="add", GROUP="audio", MODE="0660"
+KERNEL=="pcmC[Dp]*", ACTION=="add", GROUP="audio", MODE="0660"

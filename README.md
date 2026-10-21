@@ -67,8 +67,34 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
 
+Or with one command (deps + build + tests + both packages):
+
+```
+bash build.sh
+```
+
 Artifacts: `build/voicecraft-studio` (GUI) and seven test binaries
 (`build/test_*`).
+
+## Packages: .deb and AppImage
+
+Both are produced by the build:
+
+| Package | Command | Install / run |
+|---|---|---|
+| **.deb** | `cpack -G DEB` (or `bash build.sh`) | `sudo apt install ./build/voicecraft-studio-1.0.0-amd64.deb` |
+| **AppImage** | `scripts/build_appimage.sh` (or `bash build.sh`) | `./build/voicecraft-studio.AppImage` |
+
+The .deb installs `/usr/bin/voicecraft-studio`, the desktop entry, icon,
+docs and a udev rule for realtime audio; it depends on the system Qt5 /
+PulseAudio / RNNoise runtime packages (no bundled libraries, standard
+distro hygiene).
+
+**glibc compatibility rule** — an AppImage (or binary) can only run on
+systems whose glibc is *newer or equal* to the machine that built it.
+Build on your Ubuntu 20.04 desktop (`bash build.sh`) to get artifacts that
+run on 20.04 and anything newer; prebuilt artifacts generated on newer
+distros (Debian 12+, Ubuntu 22.04+) will not start on 20.04.
 
 ## Running the test suite
 

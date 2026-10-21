@@ -27,6 +27,36 @@ pkg_check_modules(SAMPLERATE REQUIRED IMPORTED_TARGET samplerate)
 pkg_check_modules(SNDFILE REQUIRED IMPORTED_TARGET sndfile)
 pkg_check_modules(RNNOISE REQUIRED IMPORTED_TARGET rnnoise)
 
+# pkgconf (Debian 13 ships 1.8.1) can silently drop -L dirs from `--libs`
+# output depending on path/prefix quirks, leaving bare -lpulse/-lsamplerate
+# on the link line -> "cannot find -lpulse" on user-space prefixes like
+# ~/opt. The `--variable=libdir` query is NEVER filtered, so resolve the raw
+# library dirs ourselves and hand them to the linker. Harmless when the libs
+# live in the system default search path (normal root installs).
+set(_VC_PC_LIBS libpulse libpulse-simple samplerate sndfile rnnoise)
+set(_VC_LINK_DIRS "")
+foreach(_l ${_VC_PC_LIBS})
+  execute_process(
+    COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=libdir ${_l}
+    OUTPUT_VARIABLE _vc_libdir
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_QUIET
+    RESULT_VARIABLE _vc_rc)
+  if(_vc_rc EQUAL 0 AND _vc_libdir AND EXISTS "${_vc_libdir}")
+    list(APPEND _VC_LINK_DIRS "${_vc_libdir}")
+  endif()
+endforeach()
+if(_VC_LINK_DIRS)
+  list(REMOVE_DUPLICATES _VC_LINK_DIRS)
+  # NOTE: link_directories() is NOT enough here — CMake strips -L dirs that
+  # its compiler probe classified as "implicit" (it saw LIBRARY_PATH during
+  # detection), while the linker at build time may not see them. Direct
+  # link options are emitted verbatim and survive.
+  foreach(_d ${_VC_LINK_DIRS})
+    add_link_options("-L${_d}")
+  endforeach()
+endif()
+
 find_package(Threads REQUIRED)
 
 # ---------------------------------------------------------------------------
@@ -134,3 +164,42 @@ install(FILES docs/README.md docs/USER_GUIDE.md docs/OBS_GUIDE.md
         DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/voicecraft-studio)
 install(FILES resources/51-voicecraft-realtime.rules
         DESTINATION /etc/udev/rules.d)
+
+# ---------------------------------------------------------------------------
+# Packaging: Debian (.deb) — mandatory deliverable
+# Build:   cpack -G DEB   (from the build directory)
+# ---------------------------------------------------------------------------
+set(CPACK_PACKAGE_NAME "voicecraft-studio")
+set(CPACK_PACKAGE_VENDOR "PSNarayananmc")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_CONTACT "PSNarayananmc <PSNarayananmc@users.noreply.github.com>")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY
+  "Real-time voice processing studio - podcast-grade microphone for Linux")
+set(CPACK_PACKAGE_DESCRIPTION
+  "VoiceCraft Studio turns a normal microphone into a podcast-grade source
+and integrates seamlessly with OBS Studio via a PulseAudio virtual
+microphone. Full DSP chain: high-pass, RNNoise denoise, noise gate,
+parametric EQ, de-esser, compressor, saturation, BS.1770 loudness and
+true-peak limiter. Measured <30 ms end-to-end latency, fully offline,
+no root required.")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/PSNarayananmc/MIC-ONLY")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/docs/LICENSES.md")
+
+set(CPACK_DEBIAN_PACKAGE_NAME "voicecraft-studio")
+set(CPACK_DEBIAN_PACKAGE_SECTION "sound")
+set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_CONTACT}")
+# Runtime deps on Ubuntu 20.04/Debian 11+ (GUI + audio stack)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS
+  "libqt5core5a (>= 5.12) | libqt5core5 (>= 5.12), libqt5gui5 (>= 5.12) | libqt5gui5-gles (>= 5.12), libqt5widgets5 (>= 5.12), libpulse0 (>= 14), libsamplerate0 (>= 0.1.9), libsndfile1 (>= 1.0.28), librnnoise0 (>= 0.1)")
+set(CPACK_DEBIAN_PACKAGE_RECOMMENDS
+  "pulseaudio | pipewire-pulse, obs-studio")
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS OFF)
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
+  "${CMAKE_SOURCE_DIR}/resources/deb-postinst")
+set(CPACK_STRIP_FILES "bin/voicecraft-studio")
+set(CPACK_PACKAGE_FILE_NAME
+  "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-amd64")
+
+include(CPack)

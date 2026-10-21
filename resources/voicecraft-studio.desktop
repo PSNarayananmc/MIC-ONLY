@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=VoiceCraft Studio
+GenericName=Voice Processor
+Comment=Turn your microphone into a podcast-grade source for OBS and calls
+Exec=voicecraft-studio
+Icon=voicecraft-studio
+Terminal=false
+Categories=AudioVideo;Audio;Recorder;
+Keywords=microphone;voice;podcast;obs;stream;noise;denoise;compressor;
+StartupNotify=true
+StartupWMClass=voicecraft-studio

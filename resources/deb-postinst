@@ -1,0 +1,27 @@
+#!/bin/sh
+# Debian postinst for VoiceCraft Studio
+set -e
+
+# Refresh the applications cache so the menu entry appears (best effort)
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database >/dev/null 2>&1 || true
+fi
+
+# Refresh the icon cache (best effort)
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -f /usr/share/icons/hicolor >/dev/null 2>&1 || true
+fi
+
+# Reload udev rules so the audio-device ownership rule takes effect
+if command -v udevadm >/dev/null 2>&1; then
+    udevadm control --reload >/dev/null 2>&1 || true
+fi
+
+# Restart the user's PulseAudio so it picks up any module path changes.
+# Only when a session PulseAudio is actually running (never start one from
+# dpkg) — PipeWire sessions are left untouched.
+if [ -S "/run/user/$(id -u 2>/dev/null || echo 0)/pulse/native" ]; then
+    : # leave the running server alone; VoiceCraft loads its modules on demand
+fi
+
+exit 0
