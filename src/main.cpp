@@ -6,6 +6,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QStyleFactory>
+#include <unistd.h>   // geteuid (Qt headers do not provide it portably)
 #include <memory>
 
 int main(int argc, char** argv)

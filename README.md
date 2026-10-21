@@ -96,6 +96,33 @@ Build on your Ubuntu 20.04 desktop (`bash build.sh`) to get artifacts that
 run on 20.04 and anything newer; prebuilt artifacts generated on newer
 distros (Debian 12+, Ubuntu 22.04+) will not start on 20.04.
 
+## Building FOR Ubuntu 20.04 from a newer distro (cross-sysroot)
+
+You do not have to own a 20.04 machine. The repository ships a complete
+glibc-2.31-targeted cross build that assembles an Ubuntu 20.04 sysroot from
+the official archive (no root, no Docker) and compiles with focal's own
+g++-10 (host GCC-14's libstdc++ needs glibc ≥ 2.32 symbols, so it cannot
+produce 20.04-compatible binaries):
+
+```
+bash scripts/focal_deps.sh          # focal sysroot  -> /home/z/focal
+bash scripts/focal_gcc.sh           # focal g++-10   -> /home/z/focal-gcc
+bash scripts/build_rnnoise_focal.sh # weighted RNNoise for focal
+bash scripts/build_focal.sh         # build + verify + test + package
+```
+
+`build_focal.sh` verifies the **glibc symbol ceiling** of the result
+(must be ≤ 2.31 — measured: 2.30), runs the full 7-suite test set against
+the sandbox PulseAudio, and produces:
+
+- `build-focal/voicecraft-studio-1.0.0-focal-amd64.deb` — Depends on focal's
+  own Qt 5.12/libpulse packages; bundles a private RNNoise build WITH the
+  official pretrained model (distro librnnoise0 ships without usable
+  weights) via RUNPATH `$ORIGIN/../lib/voicecraft-studio`
+- `build-focal/voicecraft-studio-1.0.0-focal-x86_64.AppImage` —
+  self-contained (focal Qt 5.12, ICU 66, glib, pulse 13.99 chain), verified
+  to launch; runs on Ubuntu 20.04 and anything newer
+
 ## Running the test suite
 
 ```

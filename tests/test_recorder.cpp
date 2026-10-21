@@ -7,6 +7,7 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QTemporaryDir>
 #include <QThread>
 #include <cmath>

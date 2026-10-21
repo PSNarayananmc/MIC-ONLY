@@ -188,7 +188,7 @@ void RecordingTab::refreshWaveform()
 {
     const AudioDocument& doc = m_win->currentDocument();
     if (doc.frames() > 0) {
-        m_wave->setDocument(QVector<float>(doc.data().begin(), doc.data().end()),
+        m_wave->setDocument(QVector<float>::fromStdVector(doc.data()),
                             doc.channels(), doc.sampleRate());
         if (m_selEndFrame > m_selStartFrame && m_selStartFrame >= 0)
             m_wave->setSelection(m_selStartFrame, m_selEndFrame);
