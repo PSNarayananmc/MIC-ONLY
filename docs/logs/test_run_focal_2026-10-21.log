@@ -1,0 +1,4 @@
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =  13.25 sec
+GLIBC ceiling: GLIBC_2.30 (target <= 2.31 Ubuntu 20.04)
